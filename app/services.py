@@ -64,10 +64,5 @@ def generate_feedback(filler_percentage, repeated_words, sentiment, relevance):
         feedback.append(f"You repeated words {repeated_words} times. Try to be more concise.")
     
     feedback.append(f"Your response has a {sentiment} tone.")
-    
-    if relevance == "Not relevant":
-        feedback.append("Your response is off-topic. Focus more on the question.")
-    elif relevance == "Somewhat relevant":
-        feedback.append("Your response is somewhat relevant. Try being more precise.")
 
     return " ".join(feedback)
