@@ -26,18 +26,6 @@ def analyze_sentiment(response):
     else:
         return "Neutral"
 
-def check_relevance(question, response):
-    vectorizer = TfidfVectorizer()
-    vectors = vectorizer.fit_transform([question, response])
-    similarity = cosine_similarity(vectors[0], vectors[1])[0][0]
-    
-    if similarity > 0.7:
-        return "Highly relevant"
-    elif similarity > 0.4:
-        return "Somewhat relevant"
-    else:
-        return "Not relevant"
-
 def analyze_response(question, response):
     filler_percentage = count_filler_words(response)
     repeated_words = detect_repeated_words(response)
